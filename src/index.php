@@ -1,4 +1,8 @@
 <?php
+
+include "conf.php";
+include "Classes/UserManager.php";
+
 require_once '../vendor/autoload.php';
 
 use Monolog\Logger;
@@ -23,8 +27,19 @@ $twig = new Environment($loader, ['cache' => '../cache']);
 
 print("3) ok</br>");
 
+$UserManager = new UserManager($db);
+
+
+$db = new PDO($dsn, $usr, $pwd);
+$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+$UserManager = new UserManager($db);
+$users = $UserManager->getList();
+
 echo $twig->render('base.html.twig', [
     'title' => 'Essai de twig',
-    'User' => 'Le plus bo des reubeu',
+    'User' => $users,
     ]
 );
+
+
