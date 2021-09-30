@@ -22,3 +22,9 @@ print("2) ok</br>");
 $twig = new Environment($loader, ['cache' => '../cache']);
 
 print("3) ok</br>");
+
+echo $twig->render('base.html.twig', [
+    'title' => 'Essai de twig',
+    'User' => 'Le plus bo des reubeu',
+    ]
+);
