@@ -1,0 +1,10 @@
+{
+    "name": "yaperson/composer-tp",
+    "description": "composer project",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "monolog/monolog": "^2.3"
+    }
+}
