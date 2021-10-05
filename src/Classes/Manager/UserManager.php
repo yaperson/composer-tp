@@ -1,10 +1,10 @@
 <?php
-namespace App\Manager;
+namespace App\Classes\Manager;
 
 use PDO;
-USE App\Entity\User;
+use App\Classes\Entity\User;
 
-class UserManager 
+class UserManager
 {
     private $_db;
 
@@ -13,7 +13,7 @@ class UserManager
         $this->setDb($db);
     }
 
-    public function setDb($db):UserManager
+    public function setDb($db): UserManager
     {
         $this->_db = $db;
         return $this;
@@ -22,41 +22,50 @@ class UserManager
     public function addUser($email, $password)
     {
         // Netoyge des donnés envoyées
-        $email = strip_tags($_POST['email']);
-        $password = strip_tags($_POST['password']);
+        // $email = strip_tags($_POST['email']);
+        // $password = strip_tags($_POST['password']);
 
-        $stmt = $this->_db->prepare("INSERT INTO users (email, password) VALUE (?, ?);");
-        $stmt->bindParam(1, $email); 
-        $stmt->bindParam(2, $password); 
-        
+        $stmt = $this->_db->prepare("INSERT INTO users (email, `password`) VALUE (?, ?);");
+        $stmt->bindParam(1, $email);
+        $stmt->bindParam(2, $password);
+
         // Appel de la procédure stockée
         $stmt->execute();
-
-
     }
 
-    public function delete(User $user)//:bool
+    public function delete(User $user) //:bool
+
     {
         // TODO
     }
 
-    public function update(User $user)//:bool
+    public function update(User $user) //:bool
+
     {
         // TODO
     }
-    
+
     public function connectUser($email, $password)
     {
-        $email = strip_tags($_POST['email']);
-        $password = strip_tags($_POST['password']);
-
-        $stmt = $this->_db->prepare("SELECT email, password WERE email =  ? and password = ?;");
-        $stmt->bindParam(1, $email); 
-        $stmt->bindParam(2, $password); 
-        
+        session_start();
+        $_SESSION["connecter"] = FALSE;
+        $requete = $this->_db->query('SELECT id, email, `password` FROM users');
+        while ($ligne = $requete->fetch(PDO::FETCH_ASSOC)){
+            if ($email == $ligne['email']){
+                $hash = $ligne['password'];
+                if (password_verify($password, $hash)) {
+                    echo 'Le mot de passe est valide !';
+                    $_SESSION['connecter'] = TRUE;
+                    header('Location: C:\Users\legryan\Documents\php\POO-login\assets\php\user\index.php');
+                } else {
+                    session_destroy();
+                    echo 'Le mot de passe est invalide.';
+                }
+            }
+        }
     }
-    
-    public function getList():array
+
+    public function getList(): array
     {
         $userList = array();
 
@@ -68,5 +77,6 @@ class UserManager
         return $userList;
     }
 }
+
 
 ?>
