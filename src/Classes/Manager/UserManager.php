@@ -56,7 +56,7 @@ class UserManager
                 if (password_verify($password, $hash)) {
                     echo 'Le mot de passe est valide !';
                     $_SESSION['connecter'] = TRUE;
-                    header('Location: C:\Users\legryan\Documents\php\POO-login\assets\php\user\index.php');
+                    header('Location: index.php');
                 } else {
                     session_destroy();
                     echo 'Le mot de passe est invalide.';

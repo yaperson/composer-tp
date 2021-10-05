@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* base.html.twig */
-class __TwigTemplate_b97f7e2c3a256409b13e40360a7c5e3eba639d1dd3e1fa02d5ce2f8c46057539 extends Template
+/* connect.html.twig */
+class __TwigTemplate_710e1e730969cb813c665d21c48373dca82f035cbf48b173fd4ab8612febe433 extends Template
 {
     private $source;
     private $macros = [];
@@ -41,49 +41,25 @@ class __TwigTemplate_b97f7e2c3a256409b13e40360a7c5e3eba639d1dd3e1fa02d5ce2f8c460
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <link rel=\"stylesheet\" href=\"/style/style.css\">
-    <link rel=\"stylesheet\" href=\"/style/table.css\">
+    <link rel=\"stylesheet\" href=\"/style/login.css\">
     <title>Document</title>
 </head>
 <body>
     <header>
         <nav class=\"topnav\" id=\"myTopnav\">
-            <a class=\"topnav__link\" href=\"../../../index.html\">Home</a>
+            <a class=\"topnav__link\" href=\"index.html\">Home</a>
             <a class=\"topnav__link\" href=\"#news\">News</a>
             <a class=\"topnav__link\" href=\"#contact\">Contact</a>
             <a class=\"topnav__link\" id=\"right\" href=\"#\">| Login</a>
         </nav>
     </header>
     <main>
-    <h1>Logiciel - ";
-        // line 21
-        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
-        echo "</h1>
-        <table>
-            <tr>
-                <th>id</th>
-                <th>email</th>
-            </tr>
-            <tr>
-            ";
-        // line 28
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($context["user"]);
-        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 29
-            echo "               <tr><th>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 29), "html", null, true);
-            echo "</th> <th>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 29), "html", null, true);
-            echo "</th></tr>
-            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
-        echo "            </tr>
-        </table>
-        <a href=\"add.php\">Add users</a>
+        <form method=\"POST\" class=\"login_form\">
+            <h1 class=\"login_title\"> Connectez vous </h1>
+            <input class=\"login_inputs\" type=\"email\" name=\"username\" required=\"\" placeholder=\"email\"> <br>
+            <input class=\"login_inputs\" type=\"password\" name=\"password\" required=\"\" placeholder=\"password\"> <br>
+            <input class=\"login_inputs\" id=\"btn5\" type=\"submit\">
+        </form>
     </main>
     <footer>
         <nav id=\"footer-navbar\">
@@ -94,26 +70,22 @@ class __TwigTemplate_b97f7e2c3a256409b13e40360a7c5e3eba639d1dd3e1fa02d5ce2f8c460
         </nav>
     </footer>
 </body>
+<script src=\"assets/script/btn5.js\" type=\"text/javascript\"></script>
 </html>";
     }
 
     public function getTemplateName()
     {
-        return "base.html.twig";
-    }
-
-    public function isTraitable()
-    {
-        return false;
+        return "connect.html.twig";
     }
 
     public function getDebugInfo()
     {
-        return array (  84 => 31,  73 => 29,  69 => 28,  59 => 21,  37 => 1,);
+        return array (  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "base.html.twig", "C:\\Users\\legryan\\Documents\\php\\composer-tp\\templates\\base.html.twig");
+        return new Source("", "connect.html.twig", "C:\\Users\\legryan\\Documents\\php\\composer-tp\\templates\\connect.html.twig");
     }
 }

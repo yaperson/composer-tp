@@ -1,6 +1,4 @@
 <?php
-
-// include "Classes/Manager/UserManager.php";
 require_once '../vendor/autoload.php';
 
 use Monolog\Logger;
@@ -19,22 +17,22 @@ $loader = new FilesystemLoader('../templates');
 
 $twig = new Environment($loader, ['cache' => '../cache']);
 
-
 require_once("conf.php");
 
 try {
-    $db = new PDO($dsn, $usr, $pwd);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    $UserManager = new UserManager($db);
+    if (isset($_POST['email'])&&(isset($_POST['password']))){
+        $db = new PDO($dsn, $usr, $pwd);
+        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $newuser = new UserManager($db);
+        $password = $_POST['password'];
+        // $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $newuser->connectUser($_POST['email'], $password);
+     }    
     
-    $users = $UserManager->getList();
-    
-    echo $twig->render('index.html.twig', [
-        'title' => 'Liste des utilisateurs',
-        'user' => $users,
+    echo $twig->render('connect.html.twig', [
+        'title' => 'Connectez vous !!!!!!!!',
         ]
     );    
 } catch(PDOException $e) {
     print('erreur de connection : ' . $e->getMessage());
 }
-
