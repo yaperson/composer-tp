@@ -17,6 +17,8 @@ $loader = new FilesystemLoader('../templates');
 
 $twig = new Environment($loader, ['cache' => '../cache']);
 
+$error = '';
+
 require_once("conf.php");
 
 try {
@@ -28,10 +30,11 @@ try {
         // $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $newuser->connectUser($_POST['email'], $password);
      }    
-     echo $twig->render('connect.html.twig', [
-        'title' => 'Connectez vous !!!!!!!!',
-        ]
-    );    
 } catch(PDOException $e) {
     print('erreur de connection : ' . $e->getMessage());
-}
+}     
+echo $twig->render('connect.html.twig', [
+    'title' => 'Connectez vous !!!!!!!!',
+    'error' => $error,
+    ]
+);    

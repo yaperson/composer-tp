@@ -17,6 +17,8 @@ $loader = new FilesystemLoader('../templates');
 
 $twig = new Environment($loader, ['cache' => '../cache']);
 
+$error = '';
+
 require_once("conf.php");
 
 try {
@@ -28,15 +30,14 @@ try {
         $newuser->addUser($_POST['email'], $password);
         header('Location: connect.php');
     }
-    
-    echo $twig->render('add.html.twig', [
-        'title' => 'Nouvel utilisateur',
-        ]
-    );    
 } catch(PDOException $e) {
     print('erreur de connection : ' . $e->getMessage());
 }
-
+echo $twig->render('add.html.twig', [
+    'title' => 'Nouvel utilisateur',
+    'error' => $error,
+    ]
+);    
 
 ?>
 

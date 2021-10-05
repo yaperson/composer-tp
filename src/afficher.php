@@ -1,6 +1,4 @@
 <?php
-
-// include "Classes/Manager/UserManager.php";
 require_once '../vendor/autoload.php';
 
 use Monolog\Logger;
@@ -33,7 +31,6 @@ try {
 } catch(PDOException $e) {
     $error = 'erreur de connection : ' . $e->getMessage();
 }
-
 echo $twig->render('afficher.html.twig', [
     'title' => 'Liste des utilisateurs',
     'user' => $users,

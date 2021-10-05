@@ -45,7 +45,17 @@ class __TwigTemplate_8d2d7eb8e6649e7479ebe158537e61c67625699cceb9e395b080332fb8c
     <title>Document</title>
 </head>
 <body>
-    <header>
+    ";
+        // line 12
+        if ((0 !== twig_compare(($context["error"] ?? null), ""))) {
+            // line 13
+            echo "        <div class=\"error\">";
+            echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
+            echo "</div>    
+    ";
+        }
+        // line 15
+        echo "    <header>
         <nav class=\"topnav\" id=\"myTopnav\">
             <a class=\"topnav__link\" href=\"index.html\">Home</a>
             <a class=\"topnav__link\" href=\"#news\">News</a>
@@ -79,9 +89,14 @@ class __TwigTemplate_8d2d7eb8e6649e7479ebe158537e61c67625699cceb9e395b080332fb8c
         return "add.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  37 => 1,);
+        return array (  58 => 15,  52 => 13,  50 => 12,  37 => 1,);
     }
 
     public function getSourceContext()
