@@ -55,7 +55,7 @@ h3{
     position: absolute;
     left: var(--x);
     top: var(--y);
-    background: radial-gradient(circle closest-side, rgb(45, 152, 224), transparent);
+    background: radial-gradient(circle closest-side , rgb(45, 152, 224), transparent); 
     width: var(--size);
     height: var(--size);
     transform: translate(-50%,-50%);

@@ -28,8 +28,7 @@ try {
         // $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $newuser->connectUser($_POST['email'], $password);
      }    
-    
-    echo $twig->render('connect.html.twig', [
+     echo $twig->render('connect.html.twig', [
         'title' => 'Connectez vous !!!!!!!!',
         ]
     );    

@@ -29,7 +29,7 @@ try {
     
     $users = $UserManager->getList();
     
-    echo $twig->render('index.html.twig', [
+    echo $twig->render('afficher.html.twig', [
         'title' => 'Liste des utilisateurs',
         'user' => $users,
         ]

@@ -56,7 +56,7 @@ class __TwigTemplate_710e1e730969cb813c665d21c48373dca82f035cbf48b173fd4ab8612fe
     <main>
         <form method=\"POST\" class=\"login_form\">
             <h1 class=\"login_title\"> Connectez vous </h1>
-            <input class=\"login_inputs\" type=\"email\" name=\"username\" required=\"\" placeholder=\"email\"> <br>
+            <input class=\"login_inputs\" type=\"email\" name=\"email\" required=\"\" placeholder=\"email\"> <br>
             <input class=\"login_inputs\" type=\"password\" name=\"password\" required=\"\" placeholder=\"password\"> <br>
             <input class=\"login_inputs\" id=\"btn5\" type=\"submit\">
         </form>

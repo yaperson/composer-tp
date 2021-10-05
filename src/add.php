@@ -24,7 +24,7 @@ try {
         $db = new PDO($dsn, $usr, $pwd);
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         $newuser = new UserManager($db);
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $newuser->addUser($_POST['email'], $password);
         header('Location: connect.php');
     }
