@@ -15,15 +15,9 @@ $logger->pushHandler(new StreamHandler(__DIR__.'/../log/app.log', Logger::DEBUG)
 
 $logger->info('Start...');
 
-print("1) ok</br>");
-
 $loader = new FilesystemLoader('../templates');
 
-print("2) ok</br>");
-
 $twig = new Environment($loader, ['cache' => '../cache']);
-
-print("3) ok</br>");
 
 
 require_once("conf.php");
@@ -37,7 +31,7 @@ try {
     
     echo $twig->render('base.html.twig', [
         'title' => 'Liste des utilisateurs',
-        'User' => $users,
+        'user' => $users,
         ]
     );    
 } catch(PDOException $e) {
