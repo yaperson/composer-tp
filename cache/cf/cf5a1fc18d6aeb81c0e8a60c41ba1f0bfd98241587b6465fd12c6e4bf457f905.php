@@ -45,6 +45,10 @@ class __TwigTemplate_e39824f7c11aafba27eb289c5a51761de8030838a1e2de3bddeffebcfc3
     <title>Document</title>
 </head>
 <body>
+    <div class=\"error\">";
+        // line 12
+        echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
+        echo " </div>
     <header>
         <nav class=\"topnav\" id=\"myTopnav\">
             <a class=\"topnav__link\" href=\"index.html\">Home</a>
@@ -55,7 +59,7 @@ class __TwigTemplate_e39824f7c11aafba27eb289c5a51761de8030838a1e2de3bddeffebcfc3
     </header>
     <main>
     <h1>Logiciel - ";
-        // line 21
+        // line 22
         echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
         echo "</h1>
         <table>
@@ -65,22 +69,22 @@ class __TwigTemplate_e39824f7c11aafba27eb289c5a51761de8030838a1e2de3bddeffebcfc3
             </tr>
             <tr>
             ";
-        // line 28
+        // line 29
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["user"]);
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 29
+            // line 30
             echo "               <tr><th>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 30), "html", null, true);
             echo "</th> <th>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 30), "html", null, true);
             echo "</th></tr>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 32
         echo "            </tr>
         </table>
         <a href=\"add.php\">Add users</a>
@@ -109,7 +113,7 @@ class __TwigTemplate_e39824f7c11aafba27eb289c5a51761de8030838a1e2de3bddeffebcfc3
 
     public function getDebugInfo()
     {
-        return array (  84 => 31,  73 => 29,  69 => 28,  59 => 21,  37 => 1,);
+        return array (  88 => 32,  77 => 30,  73 => 29,  63 => 22,  50 => 12,  37 => 1,);
     }
 
     public function getSourceContext()

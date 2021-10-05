@@ -19,6 +19,7 @@ $loader = new FilesystemLoader('../templates');
 
 $twig = new Environment($loader, ['cache' => '../cache']);
 
+$error = '';
 
 require_once("conf.php");
 
@@ -28,13 +29,14 @@ try {
     $UserManager = new UserManager($db);
     
     $users = $UserManager->getList();
-    
-    echo $twig->render('afficher.html.twig', [
-        'title' => 'Liste des utilisateurs',
-        'user' => $users,
-        ]
-    );    
+          
 } catch(PDOException $e) {
-    print('erreur de connection : ' . $e->getMessage());
+    $error = 'erreur de connection : ' . $e->getMessage();
 }
 
+echo $twig->render('afficher.html.twig', [
+    'title' => 'Liste des utilisateurs',
+    'user' => $users,
+    'error' => $error,
+    ]
+);  
