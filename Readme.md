@@ -67,7 +67,7 @@ src => contiendra le code php </br>
 template => contiendra les vues en .html.twig </br>
 log => contiendra les log 
 
-![les dossiers](/doc_images/01.png)
+![les dossiers](doc_images/01.png)
 
 
 ## Installation de monolog :
