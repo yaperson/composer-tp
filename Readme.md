@@ -67,7 +67,7 @@ src => contiendra le code php </br>
 template => contiendra les vues en .html.twig </br>
 log => contiendra les log 
 
-![les dossiers](/assets/images/tux.png)
+![les dossiers](/doc_images/01.png)
 
 
 ## Installation de monolog :
@@ -96,7 +96,7 @@ Ajouter le code ci dessous :
 
 Le résultat, à chaque fois qu’un utilisateur se connecte sur la page, un fichier debug.log est créer puis des log sont écrits : 
 
-
+![les dossiers](/doc_images/03.png)
 
 Bravo, vous avez maintenant les base de monolog, pour plus de renseignement, rendez vous sur la doc officielle → [ici](https://github.com/Seldaek/monolog/blob/main/doc/01-usage.md#log-levels). <br>
 
@@ -108,8 +108,12 @@ Bravo, vous avez maintenant les base de monolog, pour plus de renseignement, ren
 
 dans template => contiendra les vues en .html.twig
 
+![les dossiers](/doc_images/02.png)
+
 Le fichier .html.twig est un html qui sera pris en charge par twig.<br>
 La syntaxe reste celle de HTML.
+
+![les dossiers](/doc_images/03.png)
 
 ### On importe les classes : 
 
