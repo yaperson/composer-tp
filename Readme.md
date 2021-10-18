@@ -67,7 +67,7 @@ src => contiendra le code php </br>
 template => contiendra les vues en .html.twig </br>
 log => contiendra les log 
 
-![les dossiers](doc_images/01.png)
+![les dossiers]([/doc_images/01.pngs](https://github.com/yaperson/composer-tp/blob/Doc-Twig/Monolog/doc_images/01.PNG)
 
 
 ## Installation de monolog :
@@ -113,7 +113,7 @@ dans template => contiendra les vues en .html.twig
 Le fichier .html.twig est un html qui sera pris en charge par twig.<br>
 La syntaxe reste celle de HTML.
 
-![les dossiers](/doc_images/03.png)
+![les dossiers](/doc_images/04.png)
 
 ### On importe les classes : 
 
